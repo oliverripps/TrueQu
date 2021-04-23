@@ -15,7 +15,7 @@ function App() {
             <Route path="/" exact>
               <Homescreen />
             </Route>
-            <Route path="/create" exact>
+            <Route path="/create">
               <Create />
             </Route>
             <Route path="/join" exact>
