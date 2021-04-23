@@ -13,9 +13,8 @@
   z-index: -1;
   position: absolute;
 }
-.bottomtext {
-  color: black;
-  margin-top: 30%;
+.logocontent {
+  padding-top: 5%;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

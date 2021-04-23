@@ -1,32 +1,29 @@
-import logo from './images/TrueQuLogo.png';
-import Turntable from './images/TurnTable.png';
+import Homescreen from './Homescreen';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import Create from './Create.js';
+import Join from './Join.js';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <div className="logocontent">
-        <a className="instalink" href="https://www.instagram.com/truequmusic/">
-          <div>
-            <img src={Turntable} className="turn-table" alt="logo" />
-            <img src={logo} className="App-logo" alt="logo" />
-          </div>
-        </a>
-
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <h2> Democratizing Your Queue</h2>
-        <h2> Coming Soon!</h2>
-      </div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <p>Created by Oliver Ripps and Elliot Tufaro 2021</p>
+      <Router>
+        <Switch>
+          <Route path="/" exact>
+            <Homescreen />
+          </Route>
+          <Route path="/create" exact>
+            <Create />
+          </Route>
+          <Route path="/join" exact>
+            <Join />
+          </Route>
+        </Switch>
+      </Router>
+      {/*       <div className="bottomtext">
+        <p>Created by Oliver Ripps and Elliot Tufaro 2021</p>
+      </div>{' '}
+      */}
     </div>
   );
 }
