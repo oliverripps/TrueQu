@@ -5,13 +5,21 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   iconsvg: {
-    fontSize: '50px',
+    fontSize: '30px',
+  },
+  button: {
+    marginRight: '100%',
   },
 }));
 function Home() {
   const classes = useStyles();
   return (
-    <Button component={Link} to={'/'} variant="contained">
+    <Button
+      className={classes.button}
+      component={Link}
+      to={'/'}
+      variant="contained"
+    >
       <HomeIcon className={classes.iconsvg} />
     </Button>
   );
