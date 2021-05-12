@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Create from './Create.js';
 import Join from './Join.js';
 import './App.css';
+import Party from './Party.js';
 import DesktopVersion from './DesktopVersion.js';
 import { BrowserView, MobileView } from 'react-device-detect';
 
@@ -20,6 +21,9 @@ function App() {
             </Route>
             <Route path="/join" exact>
               <Join />
+            </Route>
+            <Route path="/party/:partyId" >
+              <Party />
             </Route>
           </Switch>
         </Router>

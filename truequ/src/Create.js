@@ -1,4 +1,6 @@
-import Home from './Home.js';
+
+import { useState } from 'react';
+import { useHistory } from "react-router-dom";
 
 function Create() {
   const createString = (digits) => {
@@ -10,17 +12,16 @@ function Create() {
         characters.charAt(Math.floor(Math.random() * charactersLength))
       );
     }
-    return result.join('');
+    let ret = result.join('');
+    return ret;
   };
-
-  const partyString = createString(4);
-  return (
-    <div className="App">
-      {' '}
-      <Home />
-      Party code: {partyString}
-    </div>
-  );
+  const [code, setCode] = useState();
+  if(!code){
+    setCode(createString(4).slice());
+  }
+  const history = useHistory();
+  history.push("/party/"+ code);
+  window.location.reload(false);
 }
 
 export default Create;
